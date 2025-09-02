@@ -1,0 +1,178 @@
+section {
+  margin-bottom: 5rem; /* adds space after each section */
+  margin-top: 5rem; /* adds space before each section */
+  padding: 1rem; /* adds padding inside each section */
+}
+
+/* Navbars */
+.first-navbar {
+  background-color: #d0a5dd;
+}
+
+.second-navbar {
+  display: flex;
+}
+
+.third-navbar {
+  background-color: #fcf0ff;
+  height: auto;
+  font-size: auto;
+  gap: auto;
+  margin-bottom: 4rem;
+}
+
+/* Logo */
+.second-navbar .navbar-brand img:first-child {
+  width: 8vw;
+  min-width: 50px;
+  max-width: 80px;
+  height: auto;
+}
+/* Brand Name */
+.second-navbar .navbar-brand img:last-child{
+  width: 36vw;
+  min-width: 90px;
+  max-width: 360px;
+  height: auto;
+}
+
+/* User & Cart */
+.second-navbar .nav-link img{
+  width: 5vw;
+  min-width: 5px;
+  max-width: 40px;
+}
+
+
+.third-navbar-links {
+  margin: auto; /* Center the links */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  color: #545454;
+  display: flex;
+  gap: 4rem;
+}
+
+.ai-analysis {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  position:relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons{
+  position:absolute;
+  top: 95%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #d0a5dd;
+  color: white;
+  border: none;
+  padding: 1rem;
+}
+
+.buttons:hover{
+  background-color: #b374c8;
+}
+
+.shop-heading{
+  margin-bottom: 4rem;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  color: #545454;
+  font-size: 3rem;
+}
+
+.shop-products{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  color: #545454;
+}
+
+.shop-buttons{
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: none;
+  border-color: #d0a5dd;
+  padding: 0.5rem;
+  color: #b374c8;
+}
+
+.shop-buttons:hover{
+  background-color: #b374c8;
+  border:none;
+}
+
+.image-overlay-container {
+  position: relative; /* Needed for absolute positioning of button */
+  display: inline-block;
+}
+
+.why-us{
+  margin-bottom: 4rem;
+  font-family: "Montserrat", sans-serif;
+  color: #545454;
+  font-size: 4rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.why-para{
+  font-family: "Montserrat", sans-serif;
+  color: #545454;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.skincare-basics{
+  margin-bottom: 4rem;
+  font-family: "Montserrat", sans-serif;
+  color: #545454;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.footer-text{
+  font-family: "Montserrat", sans-serif;
+  color: #545454;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.footer-text .nav-link{
+  color: #b374c8;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.footer-navbar {
+  background-color: #fcf0ff;
+  height: auto;
+  font-size: auto;
+  gap: auto;
+  margin-bottom: 4rem;
+  width: 100%;
+}
+
+.go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #d0a5dd;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.go-to-top:hover {
+  background-color: #b57bc0;
+}

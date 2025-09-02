@@ -1,0 +1,27 @@
+import {Container, Row, Col, Image, Button } from "react-bootstrap";
+
+
+
+export default function AppAIAnalysis(){
+    return(
+        <div>
+            <Container>
+                <Row>
+                    <Col className= "ai-analysis-image">
+                        <div>
+                            <Image src="images/ai-skin.png" rounded fluid/> 
+                        </div>
+                    </Col>
+                    
+                    <Col  className="ai-analysis">
+                        <div>
+                            <Image href="#ai-analysis" src="images/AI-Analysis.png" rounded fluid/>
+                            <Button variant="outline-dark" className= "buttons" size="lg">Start My Analysis</Button>
+                        </div>
+                    </Col>
+                
+                </Row>
+            </Container>
+        </div>
+    )
+}
