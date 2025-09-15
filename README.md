@@ -1,10 +1,10 @@
-🌸 SkinShots – AI-Powered Skincare Platform
+# 🌸 SkinShots – AI-Powered Skincare Platform
 
 An AI-driven skincare platform that analyzes user-uploaded skin images to detect concerns like acne, dark spots, or dark circles, and recommends personalized skincare products based on the results and user questionnaire responses.
 
 ---
 
-⚡ Features
+## ⚡ Features
 
 📷 Image Upload & Analysis – Detects common skin concerns using a trained AI/ML model (TensorFlow/Keras).
 
@@ -18,7 +18,7 @@ An AI-driven skincare platform that analyzes user-uploaded skin images to detect
 
 ---
 
-📂 Project Structure
+## 📂 Project Structure
 ```
 SkinShots_AI_powered_skincare_platform/
 │── backend/                # Flask backend (API + ML model)
@@ -37,46 +37,46 @@ SkinShots_AI_powered_skincare_platform/
 ```
 ---
 
-⚙️ Installation & Setup
+## ⚙️ Installation & Setup
 
-🔹 Backend (Flask + TensorFlow)
+## 🔹 Backend (Flask + TensorFlow)
 
-# Clone the repo
+### Clone the repo
 ```
 git clone https://github.com/ayushi-gajendra/SkinShots_AI_powered_skincare_platform.git
 cd SkinShots_AI_powered_skincare_platform/backend
 ```
 
-# Create virtual environment
+### Create virtual environment
 ```
 python -m venv venv
 source venv/bin/activate   # On Mac/Linux
 venv\Scripts\activate      # On Windows
 ```
 
-# Install dependencies
+### Install dependencies
 ```
 pip install -r requirements.txt
 ```
 
-# Run Flask server
+### Run Flask server
 ```
 python app.py
 ```
 
 Backend will run at: http://127.0.0.1:5000
 
-🔹 Frontend (React + Bootstrap)
+## 🔹 Frontend (React + Bootstrap)
 ```
 cd ../frontend
 ```
 
-# Install dependencies
+### Install dependencies
 ```
 npm install
 ```
 
-# Start development server
+### Start development server
 ```
 npm start
 ```
@@ -85,7 +85,7 @@ Frontend will run at: http://localhost:3000
 
 ---
 
-🚀 Usage
+## 🚀 Usage
 
 Open the app in your browser.
 
@@ -97,7 +97,7 @@ Receive AI-powered analysis + product recommendations.
 
 ---
 
-🧠 Tech Stack
+## 🧠 Tech Stack
 
 - Frontend: React, React-Bootstrap
 
@@ -109,7 +109,7 @@ Receive AI-powered analysis + product recommendations.
 
 ---
 
-📌 Future Improvements
+## 📌 Future Improvements
 
 Add user accounts to save history.
 
@@ -121,6 +121,6 @@ Integrate with e-commerce APIs for live product recommendations.
 
 ---
 
-📜 License
+## 📜 License
 
 This project is licensed under the MIT License – free to use and modify.
