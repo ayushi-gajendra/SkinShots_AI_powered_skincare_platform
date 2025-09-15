@@ -119,6 +119,8 @@ Deploy to Heroku / Vercel / AWS.
 
 Integrate with e-commerce APIs for live product recommendations.
 
+---
+
 📜 License
 
 This project is licensed under the MIT License – free to use and modify.
