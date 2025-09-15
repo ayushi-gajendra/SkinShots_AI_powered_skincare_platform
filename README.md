@@ -19,7 +19,7 @@ An AI-driven skincare platform that analyzes user-uploaded skin images to detect
 ---
 
 📂 Project Structure
-
+```
 SkinShots_AI_powered_skincare_platform/
 │── backend/                # Flask backend (API + ML model)
 │   ├── app.py              # Main Flask app
@@ -34,37 +34,52 @@ SkinShots_AI_powered_skincare_platform/
 │   └── package.json        # Frontend dependencies
 │
 │── README.md               # Project documentation
-
+```
 ---
 
 ⚙️ Installation & Setup
 
 🔹 Backend (Flask + TensorFlow)
+
 # Clone the repo
+```
 git clone https://github.com/ayushi-gajendra/SkinShots_AI_powered_skincare_platform.git
 cd SkinShots_AI_powered_skincare_platform/backend
+```
 
 # Create virtual environment
+```
 python -m venv venv
 source venv/bin/activate   # On Mac/Linux
 venv\Scripts\activate      # On Windows
+```
 
 # Install dependencies
+```
 pip install -r requirements.txt
+```
 
 # Run Flask server
+```
 python app.py
+```
 
 Backend will run at: http://127.0.0.1:5000
 
 🔹 Frontend (React + Bootstrap)
+```
 cd ../frontend
+```
 
 # Install dependencies
+```
 npm install
+```
 
 # Start development server
+```
 npm start
+```
 
 Frontend will run at: http://localhost:3000
 
