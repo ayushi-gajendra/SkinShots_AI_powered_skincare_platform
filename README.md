@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+🌸 SkinShots – AI-Powered Skincare Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An AI-driven skincare platform that analyzes user-uploaded skin images to detect concerns like acne, dark spots, or dark circles, and recommends personalized skincare products based on the results and user questionnaire responses.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+⚡ Features
 
-### `npm start`
+📷 Image Upload & Analysis – Detects common skin concerns using a trained AI/ML model (TensorFlow/Keras).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🧑‍⚕️ Personalized Recommendations – Suggests products after analyzing skin + questionnaire responses.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🌐 Full-Stack App – Flask backend + React (React-Bootstrap) frontend.
 
-### `npm test`
+🔒 CORS Enabled – Seamless communication between backend and frontend.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🛠 Extensible – Easy to add new features like user authentication, history tracking, or product databases.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+📂 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+SkinShots_AI_powered_skincare_platform/
+│── backend/                # Flask backend (API + ML model)
+│   ├── app.py              # Main Flask app
+│   ├── model/              # Trained ML/TensorFlow models
+│   └── requirements.txt    # Backend dependencies
+│
+│── frontend/               # React frontend
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── App.js          # Main app logic
+│   │   └── index.js        # Entry point
+│   └── package.json        # Frontend dependencies
+│
+│── README.md               # Project documentation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+⚙️ Installation & Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+🔹 Backend (Flask + TensorFlow)
+# Clone the repo
+git clone https://github.com/ayushi-gajendra/SkinShots_AI_powered_skincare_platform.git
+cd SkinShots_AI_powered_skincare_platform/backend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate   # On Mac/Linux
+venv\Scripts\activate      # On Windows
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Install dependencies
+pip install -r requirements.txt
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Run Flask server
+python app.py
 
-## Learn More
+Backend will run at: http://127.0.0.1:5000
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🔹 Frontend (React + Bootstrap)
+cd ../frontend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Install dependencies
+npm install
 
-### Code Splitting
+# Start development server
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Frontend will run at: http://localhost:3000
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🚀 Usage
 
-### Making a Progressive Web App
+Open the app in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Upload a skin image to detect concerns.
 
-### Advanced Configuration
+Answer skincare questions for better personalization.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Receive AI-powered analysis + product recommendations.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+🧠 Tech Stack
 
-### `npm run build` fails to minify
+- Frontend: React, React-Bootstrap
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Backend: Flask, Flask-CORS
+
+- AI/ML: TensorFlow / Keras, NumPy
+
+- Database: SQLite / PostgreSQL
+
+---
+
+📌 Future Improvements
+
+Add user accounts to save history.
+
+Improve model accuracy with larger datasets.
+
+Deploy to Heroku / Vercel / AWS.
+
+Integrate with e-commerce APIs for live product recommendations.
+
+📜 License
+
+This project is licensed under the MIT License – free to use and modify.
