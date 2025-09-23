@@ -6,7 +6,7 @@ An AI-driven skincare platform that analyzes user-uploaded skin images to detect
 
 ## 📸 Demo
 
-![App Screenshot](Demo.gif)
+![App Screenshot](Demo-SkinShots.gif)
 
 ---
 
