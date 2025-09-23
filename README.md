@@ -4,6 +4,12 @@ An AI-driven skincare platform that analyzes user-uploaded skin images to detect
 
 ---
 
+## 📸 Demo
+
+![App Screenshot](Demo.gif)
+
+---
+
 ## ⚡ Features
 
 📷 Image Upload & Analysis – Detects common skin concerns using a trained AI/ML model (TensorFlow/Keras).
