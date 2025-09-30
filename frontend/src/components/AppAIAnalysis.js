@@ -1,8 +1,11 @@
 import {Container, Row, Col, Image, Button } from "react-bootstrap";
-
+import {useNavigate} from "react-router-dom";
 
 
 export default function AppAIAnalysis(){
+
+    const navigate = useNavigate();
+    
     return(
         <div>
             <Container>
@@ -16,7 +19,7 @@ export default function AppAIAnalysis(){
                     <Col  className="ai-analysis">
                         <div>
                             <Image href="#ai-analysis" src="images/AI-Analysis.png" rounded fluid/>
-                            <Button variant="outline-dark" className= "buttons" size="lg">Start My Analysis</Button>
+                            <Button variant="outline-dark" className= "buttons" size="lg" onClick>Start My Analysis</Button>
                         </div>
                     </Col>
                 

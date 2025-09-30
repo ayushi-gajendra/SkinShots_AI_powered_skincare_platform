@@ -3,7 +3,7 @@ import './App.css';
 
 import AppSkincareBasics from "./components/SkincareBasics"
 import AppNavbar from "./components/Navbars"
-import AppAIAnalysis from "./components/AIAnalysis"
+import AppAIAnalysis from "./components/AppAIAnalysis"
 import AppProductFinder from "./components/ProductFinder"
 import AppShop from "./components/Shop"
 import AppWhyUs from "./components/WhyUs"

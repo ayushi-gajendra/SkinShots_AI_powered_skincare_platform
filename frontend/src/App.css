@@ -141,6 +141,7 @@ section {
   color: #545454;
   font-size: 1rem;
   text-align: center;
+  justify-content: center;
 }
 
 .footer-text .nav-link{
@@ -148,6 +149,7 @@ section {
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   text-align: center;
+  justify-content: center;
 }
 
 .footer-navbar {
@@ -157,6 +159,8 @@ section {
   gap: auto;
   margin-bottom: 4rem;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .go-to-top {

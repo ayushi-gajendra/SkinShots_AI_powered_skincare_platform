@@ -6,23 +6,32 @@ export default function AppFooter(){
         <section>
             <Container fluid>
                 <div>
+                    <Nav className="footer-text">
+                        <Nav.Item>
+                            <Nav.Link href="#">Contact</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="#">Mail</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                        <Nav.Link eventKey="#">Careers</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                            <Nav.Link eventKey="#">FAQs</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                        <Nav.Link eventKey="#">Instagram</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                        <Nav.Link eventKey="#">Facebook</Nav.Link>
+                        </Nav.Item>
+                        <Nav.Item>
+                        <Nav.Link eventKey="#">Linkedin</Nav.Link>
+                        </Nav.Item>
+                    </Nav>
                     <Navbar className="footer-navbar">
                         <div>Copyright © 2025 SkinShots</div>
                     </Navbar>
-                        <Nav className="footer-text">
-                            <Nav.Item>
-                                <Nav.Link href="#">Contact</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="#">Mail</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="#">FAQs</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                Copyright © 2025 SkinShots
-                            </Nav.Item>
-                        </Nav>
                     
                 </div>
             </Container>
