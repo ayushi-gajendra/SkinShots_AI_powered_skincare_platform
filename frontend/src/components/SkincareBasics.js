@@ -1,4 +1,5 @@
 import { Carousel, Container, Image } from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
 
 
 var blogs = [
@@ -9,6 +10,9 @@ var blogs = [
 
 
 export default function AppSkincareBasics(){
+
+    const navigate = useNavigate();
+
     return(
         <section>
 			<Container>
@@ -17,7 +21,7 @@ export default function AppSkincareBasics(){
                         {blogs.map(blog =>(
                             <Carousel.Item key={blog.id}>
                                 <Image src={blog.image} fluid/>
-                                <Carousel.Caption>
+                                <Carousel.Caption onClick = { () => navigate("/blogs") }>
                                 <h3>{blog.name}</h3>
                                 </Carousel.Caption>
                             </Carousel.Item>

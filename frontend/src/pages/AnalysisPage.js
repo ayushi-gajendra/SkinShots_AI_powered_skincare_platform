@@ -9,17 +9,16 @@ export default function AnalysisPage(){
     return(
         <>
         <main>
-            {/* ----------------------------- Navbar Section --------------------------------- */}
+            {/* ------- Navbar Section -------- */}
+				<AppNavbar />
 
-                <AppNavbar />
-            {/* ----------------------------- Analysis Section --------------------------------- */}
+            {/* ------ Analysis Section ------- */}
 
                 <div>
                     <p>Upload image</p>
                 </div>
 
-            {/* ---------------------------------- Footer -----------------------------------------*/}
-                    
+            {/* ----------- Footer -----------*/}  
                 <AppFooter />
         </main>
         </>

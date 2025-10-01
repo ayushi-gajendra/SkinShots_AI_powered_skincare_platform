@@ -1,5 +1,5 @@
 import {Container, Row, Col, Card, Button} from "react-bootstrap";
-
+import {useNavigate} from "react-router-dom";
 
 var products = [
 		{id: 1, name: "Cleanser", image:"images/product1.png"},
@@ -10,6 +10,9 @@ var products = [
 
 
 export default function AppShop(){
+
+	const navigate = useNavigate();
+
     return(
         <section>
 			<Container>
@@ -22,7 +25,13 @@ export default function AppShop(){
                                     <Card.Body className="shop-products text-center my-3">
                                         <Card.Title>{product.name}</Card.Title>
                                         <Card.Img src={product.image}/>
-                                        <Button className="shop-buttons" variant="outline-dark">Shop Now</Button>
+                                        <Button 
+											className="shop-buttons" 
+											variant="outline-dark"
+											onClick = { ()=> navigate("/shop") }
+										>
+											Shop Now
+										</Button>
                                     </Card.Body>
                                 </div>
 							</Card>

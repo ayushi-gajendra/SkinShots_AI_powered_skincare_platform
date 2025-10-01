@@ -12,6 +12,11 @@ import AppFooter from "./components/Footer"
 import GoToTop from './components/GoToTop';
 
 import AnalysisPage from "./pages/AnalysisPage"
+import ProductFinderPage from "./pages/ProductFinderPage"
+import ShopPage from "./pages/ShopPage"
+import BlogsPage from "./pages/BlogsPage"
+import CheckoutPage from "./pages/CheckoutPage"
+import UserProfilePage from "./pages/UserProfilePage"
 
 
 function App() {
@@ -22,7 +27,7 @@ function App() {
 				{/* Define Routes */}
 				<Routes>
 
-					{/* Home Page */}
+					{/* ------------ Home Page -------------- */}
 					<Route path="/" element={
 						<>
 				
@@ -51,9 +56,23 @@ function App() {
 						</>
 					}/>
 
-					{/* Analysis Page */}
+					{/* ----------- Analysis Page ------------*/}
 					<Route path="/analysis" element= {<AnalysisPage/>} />
-				
+
+					{/* -------- Product Finder Page --------- */}
+					<Route path="/product-finder" element= {<ProductFinderPage/>} />
+
+					{/* -------------- Shop Page -------------*/}
+					<Route path="/shop" element= {<ShopPage/>} />
+					
+					{/* -------------- Blogs Page -------------*/}
+					<Route path="/blogs" element= {<BlogsPage/>} />
+
+					{/* -------------- Checkout Page -------------*/}
+					<Route path="/checkout" element= {<CheckoutPage/>} />
+					
+					{/* -------------- User Profile Page -------------*/}
+					<Route path="/user-profile" element= {<UserProfilePage/>} />	
 				</Routes>
 			</main>			
 		</Router>

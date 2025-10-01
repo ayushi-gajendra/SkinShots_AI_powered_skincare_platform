@@ -1,10 +1,11 @@
 import { Navbar, Container, Nav } from "react-bootstrap";
 import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
 
 function AppNavbar(){
 
-
+	const navigate = useNavigate();
 
     return(
         <>
@@ -17,7 +18,7 @@ function AppNavbar(){
 		{/*--------------------------------------Second Navbar--------------------------------------------------*/}
 		<Navbar bg="white" data-bs-theme="light" className="second-navbar" sticky="top" expand="md">
 			<Container>
-				<Navbar.Brand href="#home">
+				<Navbar.Brand onClick = { () => navigate("/") }>
 					<img
 						alt="Brand Logo"
 						src="images/SkinShots-Logo.png"
@@ -31,14 +32,14 @@ function AppNavbar(){
 				</Navbar.Brand>
 
 				<Nav className="icon-nav">
-					<Nav.Link href="#">
+					<Nav.Link onClick = { () => navigate("/user-profile")}>
 					<img
 						alt="User"
 						src="images/User.png"
 						className="d-inline-block align-top img-fluid"
 					/>{' '}
 					</Nav.Link>
-					<Nav.Link href="#">
+					<Nav.Link onClick = { () => navigate("/checkout")}>
 					<img
 						alt="Cart"
 						src="images/Cart.png"
