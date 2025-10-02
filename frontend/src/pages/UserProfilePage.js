@@ -12,7 +12,8 @@ export default function UserProfilePage(){
 			<AppNavbar />
 
             {/* ----------- User Section -----------*/}  
-            <p> Name
+            <p> login/Register
+                Name
                 Contact
                 Email
                 Purchase History

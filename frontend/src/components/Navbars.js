@@ -58,11 +58,11 @@ function AppNavbar(){
 			{/* Collapsible section */}
 			<Navbar.Collapse>
 				<Nav className="third-navbar-links">
-					<Nav.Link href="#shop">Shop</Nav.Link>
-					<Nav.Link href="#product-finder">Product Finder</Nav.Link>
-					<Nav.Link href="#ai-analysis">AI Skin Analysis</Nav.Link>
+					<Nav.Link onClick = {()=> navigate("/shop")}>Shop</Nav.Link>
+					<Nav.Link onClick = {() => navigate("/product-finder")}>Product Finder</Nav.Link>
+					<Nav.Link onClick={() => navigate("/ai-analysis")}>AI Skin Analysis</Nav.Link>
 					<Nav.Link href="#why-us">Why Us</Nav.Link>
-					<Nav.Link href="#blog">Blog</Nav.Link>
+					<Nav.Link onClick={() => navigate("/blog")}>Blog</Nav.Link>
 				</Nav>
 			</Navbar.Collapse>
 			</Container>

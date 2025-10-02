@@ -23,7 +23,7 @@ export default function AppAIAnalysis(){
                                 variant="outline-dark" 
                                 className= "buttons" 
                                 size="lg" 
-                                onClick = {() => navigate("/analysis")}
+                                onClick = {() => navigate("/ai-analysis")}
                             >
                                 Start My Analysis
                             </Button>

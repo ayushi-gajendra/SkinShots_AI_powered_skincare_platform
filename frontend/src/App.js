@@ -14,7 +14,7 @@ import GoToTop from './components/GoToTop';
 import AnalysisPage from "./pages/AnalysisPage"
 import ProductFinderPage from "./pages/ProductFinderPage"
 import ShopPage from "./pages/ShopPage"
-import BlogsPage from "./pages/BlogsPage"
+import BlogPage from "./pages/BlogPage"
 import CheckoutPage from "./pages/CheckoutPage"
 import UserProfilePage from "./pages/UserProfilePage"
 
@@ -57,7 +57,7 @@ function App() {
 					}/>
 
 					{/* ----------- Analysis Page ------------*/}
-					<Route path="/analysis" element= {<AnalysisPage/>} />
+					<Route path="/ai-analysis" element= {<AnalysisPage/>} />
 
 					{/* -------- Product Finder Page --------- */}
 					<Route path="/product-finder" element= {<ProductFinderPage/>} />
@@ -65,8 +65,8 @@ function App() {
 					{/* -------------- Shop Page -------------*/}
 					<Route path="/shop" element= {<ShopPage/>} />
 					
-					{/* -------------- Blogs Page -------------*/}
-					<Route path="/blogs" element= {<BlogsPage/>} />
+					{/* -------------- Blog Page -------------*/}
+					<Route path="/blog" element= {<BlogPage/>} />
 
 					{/* -------------- Checkout Page -------------*/}
 					<Route path="/checkout" element= {<CheckoutPage/>} />

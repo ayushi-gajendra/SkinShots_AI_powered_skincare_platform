@@ -3,7 +3,7 @@ import {Navbar, Nav, Container} from 'react-bootstrap';
 
 export default function AppFooter(){
     return(
-        <section>
+        
             <Container fluid>
                 <div>
                     <Nav className="footer-text">
@@ -31,11 +31,10 @@ export default function AppFooter(){
                     </Nav>
                     <Navbar className="footer-navbar">
                         <div>Copyright © 2025 SkinShots</div>
-                    </Navbar>
-                    
+                    </Navbar>          
                 </div>
             </Container>
-        </section>
+   
         
     )
 }

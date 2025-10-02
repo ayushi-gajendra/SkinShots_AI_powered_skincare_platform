@@ -21,7 +21,7 @@ export default function AppSkincareBasics(){
                         {blogs.map(blog =>(
                             <Carousel.Item key={blog.id}>
                                 <Image src={blog.image} fluid/>
-                                <Carousel.Caption onClick = { () => navigate("/blogs") }>
+                                <Carousel.Caption onClick = { () => navigate("/blog") }>
                                 <h3>{blog.name}</h3>
                                 </Carousel.Caption>
                             </Carousel.Item>
