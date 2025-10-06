@@ -18,7 +18,7 @@ export default function AppAIAnalysis(){
                     
                     <Col  className="ai-analysis">
                         <div>
-                            <Image href="#ai-analysis" src="images/AI-Analysis.png" rounded fluid/>
+                            <Image src="images/AI-Analysis.png" rounded fluid/>
                             <Button 
                                 variant="outline-dark" 
                                 className= "buttons" 
