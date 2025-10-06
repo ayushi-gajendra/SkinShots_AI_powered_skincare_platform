@@ -18,7 +18,7 @@ export default function AnalysisPage(){
                     <Row>
                         <Col>
                             <div>
-                                <Image src="">
+                                <Image src=""/>
 
                             </div>
                         </Col>
