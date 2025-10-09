@@ -107,6 +107,19 @@ section {
   border:none;
 }
 
+.shop-page-buttons{
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #d0a5dd;
+  border: #d0a5dd;
+  color: white;
+}
+
+.shop-page-buttons:hover{
+  background-color: #b374c8;
+  border: none;
+}
+
 .image-overlay-container {
   position: relative; /* Needed for absolute positioning of button */
   display: inline-block;
@@ -210,4 +223,8 @@ section {
   height:auto;
   width:80%;
   margin-top: 10%;
+}
+
+.shop-page-cards{
+  height:100%;
 }

@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css"
 
 import React, {useRef, useState} from "react"
-import {Row, Col, Image, Button, Container, Card} from "react-bootstrap"
+import {Row, Col, Image, Button, Container} from "react-bootstrap"
 
 import AppNavbar from "../components/Navbars"
 import AppFooter from "../components/Footer"

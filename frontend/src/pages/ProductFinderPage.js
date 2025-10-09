@@ -5,6 +5,10 @@ import AppNavbar from "../components/Navbars"
 import AppFooter from "../components/Footer"
 
 export default function ProductFinderPage(){
+
+    const questions = [
+        
+    ]
     return(
         <>
         <main>
