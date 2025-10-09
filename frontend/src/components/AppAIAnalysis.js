@@ -25,7 +25,7 @@ export default function AppAIAnalysis(){
                                 size="lg" 
                                 onClick = {() => navigate("/ai-analysis")}
                             >
-                                Start My Analysis
+                                Try Now
                             </Button>
                         </div>
                     </Col>

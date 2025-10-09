@@ -56,7 +56,7 @@ section {
 .ai-analysis {
   margin-top: 4rem;
   margin-bottom: 4rem;
-  position:relative;
+  position:relative;  /* Needed for absolute positioning of .buttons */
   justify-content: center;
   align-items: center;
 }
@@ -180,4 +180,34 @@ section {
 
 .go-to-top:hover {
   background-color: #b57bc0;
+}
+
+.analysis-page-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #545454;
+  margin-left: 5rem;
+}
+
+.analysis-page-text button{
+  background-color: #d0a5dd;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.analysis-page-text button:hover {
+  background-color: #b57bc0;
+}
+
+.preview-image{
+  height:auto;
+  width:80%;
+  margin-top: 10%;
 }
