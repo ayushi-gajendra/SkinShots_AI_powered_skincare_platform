@@ -216,6 +216,7 @@ section {
   margin-bottom: 1.5rem;
   font-family: "Montserrat", sans-serif;
   margin-top: 1rem;
+  margin-bottom: auto;
 }
 
 .shop-page-cards .card-body{
@@ -283,4 +284,8 @@ section {
   text-align: left;
   color: grey;
   margin-top: auto;
+}
+
+.cards-row{
+  margin-bottom: 5rem;
 }
