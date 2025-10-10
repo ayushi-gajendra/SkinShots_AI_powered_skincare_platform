@@ -107,19 +107,6 @@ section {
   border:none;
 }
 
-.shop-page-buttons{
-  font-size: 1rem;
-  font-weight: 600;
-  background-color: #d0a5dd;
-  border: #d0a5dd;
-  color: white;
-}
-
-.shop-page-buttons:hover{
-  background-color: #b374c8;
-  border: none;
-}
-
 .image-overlay-container {
   position: relative; /* Needed for absolute positioning of button */
   display: inline-block;
@@ -161,8 +148,7 @@ section {
   color: #b374c8;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
-  text-align: center;
-  justify-content: center;
+
 }
 
 .footer-navbar {
@@ -171,7 +157,6 @@ section {
   font-size: auto;
   gap: auto;
   margin-bottom: 0;
-  margin-top: auto;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -216,7 +201,7 @@ section {
 }
 
 .analysis-page-text button:hover {
-  background-color: #b57bc0;
+  background-color: #7d3396;
 }
 
 .preview-image{
@@ -227,4 +212,75 @@ section {
 
 .shop-page-cards{
   height:100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 1rem;
+}
+
+.shop-page-cards .card-body{
+  display:flex;
+  flex-direction: column;
+}
+
+.shop-page-buttons{
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #d0a5dd;
+  border: #d0a5dd;
+  color: white;
+  width: 100%;
+  margin-top: auto;
+}
+
+.shop-page-buttons:hover{
+  background-color: #7d3396;
+  border: none;
+}
+
+.shop-page-navbar{
+  font-size: auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  display: flex;
+}
+
+.shop-page-navbar-buttons{
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: 800;
+  background-color: white;
+  border: 2px solid #d0a5dd;
+  padding: 1.5rem;
+  color: #d0a5dd;
+  margin-bottom: 1rem;
+}
+
+.shop-page-navbar-buttons:hover{
+  background-color: #d0a5dd;
+  border: none;
+}
+
+/* Active state */
+.shop-page-navbar-buttons.active {
+  background-color: #b374c8;
+  border: none;
+  color: white;
+}
+
+.shop-page-cards .card-title{
+  color:#7d3396;
+  margin-top: auto;
+}
+
+.shop-page-cards .card-subtitle{
+  text-align: justify;
+  margin-top: auto;
+  color: #7d3396;
+}
+
+.shop-page-cards .card-text{
+  text-align: left;
+  color: grey;
+  margin-top: auto;
 }

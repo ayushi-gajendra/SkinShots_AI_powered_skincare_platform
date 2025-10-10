@@ -21,12 +21,12 @@ function AppNavbar(){
 				<Navbar.Brand onClick = { () => navigate("/") }>
 					<img
 						alt="Brand Logo"
-						src="images/SkinShots-Logo.png"
+						src="/images/SkinShots-Logo.png"
 						className="d-inline-block align-top img-fluid"
 					/>{' '}
 					<img
 						alt="Brand Name"
-						src="images/SkinShots-Name.png"
+						src="/images/SkinShots-Name.png"
 						className="d-inline-block align-top img-fluid"
 					/>
 				</Navbar.Brand>

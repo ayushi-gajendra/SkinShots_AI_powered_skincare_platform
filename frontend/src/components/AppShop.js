@@ -2,10 +2,10 @@ import {Container, Row, Col, Card, Button} from "react-bootstrap";
 import {useNavigate} from "react-router-dom";
 
 var products = [
-		{id: 1, name: "Cleanser", image:"images/product1.png"},
-		{id: 2, name: "Serum", image:"images/product2.png"},
-		{id: 3, name: "Moisturiser", image:"images/product3.png"},
-		{id: 4, name: "Sunscreen", image:"images/product4.png"},
+		{id: 1, name: "Cleanser", image:"/images/product1.png"},
+		{id: 2, name: "Serum", image:"/images/product2.png"},
+		{id: 3, name: "Moisturiser", image:"/images/product3.png"},
+		{id: 4, name: "Sunscreen", image:"/images/product4.png"},
 	];
 
 
@@ -28,7 +28,7 @@ export default function AppShop(){
                                         <Button 
 											className="shop-buttons" 
 											variant="outline-dark"
-											onClick = { ()=> navigate("/shop") }
+											onClick = { ()=> navigate(`/shop/${product.name.toLowerCase()}`) }
 										>
 											Shop Now
 										</Button>

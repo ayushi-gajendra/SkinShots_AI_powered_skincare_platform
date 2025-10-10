@@ -6,7 +6,7 @@ import AppSkincareBasics from "./components/SkincareBasics"
 import AppNavbar from "./components/Navbars"
 import AppAIAnalysis from "./components/AppAIAnalysis"
 import AppProductFinder from "./components/AppProductFinder"
-import AppShop from "./components/Shop"
+import AppShop from "./components/AppShop"
 import AppWhyUs from "./components/WhyUs"
 import AppFooter from "./components/Footer"
 import GoToTop from './components/GoToTop';
@@ -64,6 +64,9 @@ function App() {
 
 					{/* -------------- Shop Page -------------*/}
 					<Route path="/shop" element= {<ShopPage/>} />
+
+					{/*--- Shop Page on clicking Shop now button ---*/}
+					<Route path="/shop/:homeCategoryClicked" element={<ShopPage />} />
 					
 					{/* -------------- Blog Page -------------*/}
 					<Route path="/blog" element= {<BlogPage/>} />
