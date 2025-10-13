@@ -5,9 +5,6 @@ import {useNavigate, useParams} from "react-router-dom";
 import {Row, Col, Container, Button, Nav, Navbar, Card} from "react-bootstrap"
 import {useState, useEffect} from "react";
 
-import AppNavbar from "../components/Navbars"
-import AppFooter from "../components/Footer"
-
 
 var cleanser_products = [
     { id: 1, skin_concern: "Acne", name: "Salicylic Acid 2% Gel Cleanser", description: "Gently exfoliates and unclogs pores to treat and prevent acne.", price: 349, image: "/images/acne-cleanser.png" },
@@ -81,8 +78,6 @@ export default function ShopPage(){
     return(
         <>
         <main>
-            {/* ------- Navbar Section -------- */}
-				<AppNavbar />
 
             {/* -------- Shop Navbar --------- */}
 
@@ -124,9 +119,6 @@ export default function ShopPage(){
                         </Row>
                     </div>
                 </Container>
-
-            {/* ----------- Footer -----------*/}  
-                <AppFooter />
         </main>
         </>
     )
