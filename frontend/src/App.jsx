@@ -26,7 +26,6 @@ function App() {
 			<main>
 				{/* ------------ Define Routes -------------- */}
 				<Routes>
-
 					{/* ------------ Home Page -------------- */}
 					<Route path="/" element={<HomePage/>}/>
 
@@ -54,7 +53,7 @@ function App() {
 			</main>	
 
 			{/* ----------- Footer ------------*/}	
-			<AppFooter />		
+			<AppFooter />
 		</>	
   );
 }

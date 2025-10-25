@@ -30,7 +30,7 @@ export default function AnalysisPage(){
                 <Row>
                     <Col>
                         <div>
-                            <Image src="images/ai-skin-page.png"rounded fluid/>
+                            <Image src="images/ai-skin-page.png" rounded fluid/>
 
                         </div>
                     </Col>

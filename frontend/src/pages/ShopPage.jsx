@@ -4,6 +4,7 @@ import "../App.css"
 import {useNavigate, useParams} from "react-router-dom";
 import {Row, Col, Container, Button, Nav, Navbar, Card} from "react-bootstrap"
 import {useState, useEffect} from "react";
+import useCart from "../context/CartContext";
 
 
 var cleanser_products = [
@@ -39,7 +40,6 @@ var sunscreen_products = [
 ];
 
 
-
 export default function ShopPage(){
 
     const {homeCategoryClicked} = useParams();
@@ -72,8 +72,7 @@ export default function ShopPage(){
 
     const [cart, setCart] = useState([])
 
-
-
+    const addToCart = useCart();
 
     return(
         <>
@@ -109,6 +108,7 @@ export default function ShopPage(){
                                             <Button 
                                                 className="shop-page-buttons" 
                                                 size="lg"
+                                                onClick = {() => addToCart({...product, category: activeCategory})}
                                             >
                                                 Add to Cart
                                             </Button>
