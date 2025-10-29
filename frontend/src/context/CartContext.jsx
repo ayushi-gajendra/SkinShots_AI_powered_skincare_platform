@@ -22,8 +22,7 @@ export function CartProvider({children}){
                 const copy = [...prev];
                 copy[idx] = {...copy[idx], quantity: copy[idx].quantity+1};
                 return copy;
-            }
-            return [...prev, {...product, quantity: 1}];
+            }return [...prev, {...product, quantity: 1}];
         });
     };
 
@@ -49,6 +48,6 @@ export function CartProvider({children}){
     );
 }
 
-export default function useCart(){
+export function useCart(){
     return useContext(CartContext);
 }

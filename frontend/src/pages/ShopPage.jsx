@@ -4,7 +4,7 @@ import "../App.css"
 import {useNavigate, useParams} from "react-router-dom";
 import {Row, Col, Container, Button, Nav, Navbar, Card} from "react-bootstrap"
 import {useState, useEffect} from "react";
-import useCart from "../context/CartContext";
+import {useCart} from "../context/CartContext";
 
 
 var cleanser_products = [
@@ -72,7 +72,7 @@ export default function ShopPage(){
 
     const [cart, setCart] = useState([])
 
-    const addToCart = useCart();
+    const {addToCart} = useCart();
 
     return(
         <>

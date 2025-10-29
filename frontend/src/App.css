@@ -289,3 +289,74 @@ section {
 .cards-row{
   margin-bottom: 5rem;
 }
+
+.checkout-page{
+  margin: 2rem;
+  align-items: center;
+  display:flex;
+  flex-direction: column;
+}
+
+.checkout-product-images{
+  height: 5rem;
+}
+
+.checkout-products{
+  font-size: 1.5 rem;
+  width: 100%;
+  border: white;
+  margin: 1rem;
+}
+
+.checkout-section{
+  border: white;
+  width: 100%;
+  align-items: center;
+}
+
+.checkout-total{
+  margin-top: auto;
+  text-align: center;
+}
+
+.checkout-button{
+  font-size: 1.5rem;
+  font-weight: 600;
+  background-color: #b374c8;
+  border: 2px solid #b374c8;
+  color: white;
+  width:100%;
+}
+
+.checkout-button:hover{
+  background-color: #7d3396;
+  border: 2px solid #7d3396;
+  color: white;
+}
+
+.product-del-button{
+  background-color: #d0a5dd;
+  border: white;
+  margin: 2rem;
+}
+
+.product-del-button:hover{
+  background-color: #7d3396;
+  border: white;
+  margin: 2rem;
+}
+
+.quantity-section{
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.quantity-change-btn:disabled{
+  background-color: white;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+.quantity-text{
+  margin: 1rem;
+}
