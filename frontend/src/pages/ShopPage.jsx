@@ -44,6 +44,7 @@ export default function ShopPage(){
 
     const {homeCategoryClicked} = useParams();
     const navigate = useNavigate();
+    const {addToCart} = useCart();
 
     const [activeCategory, setActiveCategory] = useState("Cleanser");
 
@@ -70,9 +71,6 @@ export default function ShopPage(){
         navigate(`/shop/${category.toLowerCase()}`)
     };
 
-    const [cart, setCart] = useState([])
-
-    const {addToCart} = useCart();
 
     return(
         <>

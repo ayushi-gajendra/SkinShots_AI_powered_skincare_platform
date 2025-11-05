@@ -36,6 +36,7 @@ export default function CheckoutPage() {
                             <Col>
                                 <div className="quantity-section">
                                     <Button
+                                        className="quantity-change-button"
                                         variant="outline-dark"
                                         size="sm"
                                         onClick={() => 
@@ -49,7 +50,7 @@ export default function CheckoutPage() {
                                     <span className="quantity-text">{item.quantity}</span>
 
                                     <Button
-                                        className="quantity-change-btn"
+                                        className="quantity-change-button"
                                         variant="outline-dark"
                                         size="sm"
                                         onClick={() => 

@@ -1,24 +1,23 @@
-from flask import Flask, jsonify, request, render_template, redirect, url_for
+from flask import Flask, jsonify
 from flask_cors import CORS
+from flask_sqlalchemy import SQLAlchemy
+from dotenv import load_dotenv
 
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 @app.route("/")
 def home():
-    return jsonify({"message": "Flask backend is running!"})
+    return("<h1>Backend Home Page</h1>")
 
-@app.route("/ai-analysis", methods=["POST"])
-def ai_analysis():
-    data = request.json
-    return jsonify({"received_data": data, "analysis": "This is a mock AI analysis."}) 
-
-@app.route("/shop")
-def shop():
-    return jsonify({"message": "Welcome to the shop!"})
-
-
+@app.route("/api/data")
+def api_data():
+    data = {
+        "message": "Practicing linking Frontend to Backend"
+    }
+    return jsonify(data)
 
 
 if __name__=="__main__":

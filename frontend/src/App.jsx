@@ -23,7 +23,7 @@ function App() {
 			{/* -------Navbar Section ------- */}
 			<AppNavbar />
 			
-			<main>
+			<main className="main-content">
 				{/* ------------ Define Routes -------------- */}
 				<Routes>
 					{/* ------------ Home Page -------------- */}
