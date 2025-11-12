@@ -405,3 +405,44 @@ section {
   margin-left: 5rem;
   padding: 2rem;
 }
+
+.questions{
+  color:#545454;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: auto;
+}
+
+.option-buttons{
+  font-size: 1.5rem;
+  color:white;
+  background-color: #d0a5dd;
+  border: #d0a5dd;
+  font-weight: 600;
+  margin: 1.5rem;
+  padding: 1rem;
+}
+
+.option-buttons:hover{
+  background-color: #7d3396;
+}
+
+.recommendations{
+  color:#545454;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: auto;
+}
+
+.answer-list{
+  color:#545454;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 1rem;
+  margin: auto;
+}

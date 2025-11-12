@@ -1,7 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css"
 
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import {navigate, useNavigate} from "react-router-dom";
 import {Container, Button} from "react-bootstrap";
 
 
@@ -9,6 +10,8 @@ export default function ProductFinderPage(){
 
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState({});
+    const [isComplete, setIsComplete] = useState(false);
+    const navigate = useNavigate();
 
     const questions = [
         { key: "gender", question: "What is your gender?", options: ["Male", "Female", "Prefer not to answer"] },
@@ -29,38 +32,47 @@ export default function ProductFinderPage(){
         if (step < questions.length-1){
             setStep(step+1);
         } else{
-            alert("Quiz completed!");
+            setIsComplete(true);
         }
     }
 
-     /* else{
-        return finalAnswers;
-    } */
-
     
-
     return(
-        <>
         <main>
 
             {/* ----------- Product Finder Section -----------*/}  
 
             <Container>
-                <div>
-                    <h2>{current.question}</h2>
-                    {current.options.map((option,index) => (
-                        <Button 
-                            key = {index}
-                            onClick = {() => handleAnswers(option)}
-                        >
-                            {option}
-                        </Button>
-                    ))}  
-                </div>
+                { !isComplete ? (
+                    <>
+                        <h2 className = "questions">
+                            {current.question}
+                        </h2>
+                        {current.options.map((option,index) => (
+                            
+                                <Button
+                                    className = "option-buttons" 
+                                    key = {index}
+                                    onClick = {() => handleAnswers(option)}
+                                >
+                                    {option}
+                                </Button>
+
+                        ))}  
+                    </>
+                ) : (
+                    <>
+                        <h2 className = "recommendations">Personalised product recommendations for you</h2>
+                        <p className = "recommendations">(We will use the list below as prompt for out ChatGPT API)</p>
+                        {Object.entries(answers).map(([key,value]) => (
+                            <ul key={key} className = "answer-list">{key}: {value}</ul>
+                        ))}
+                    </>
+                )}
+                
             </Container>
 
         </main>
-        </>
     );
 
 }
