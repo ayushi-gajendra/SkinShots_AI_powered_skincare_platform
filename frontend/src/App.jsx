@@ -27,13 +27,13 @@ function App() {
 				{/* ------------ Define Routes -------------- */}
 				<Routes>
 					{/* ------------ Home Page -------------- */}
-					<Route path="/" element={<HomePage/>}/>
+					<Route path="/" element={<HomePage />}/>
 
 					{/* ----------- Analysis Page ------------*/}
-					<Route path="/ai-analysis" element= {<AnalysisPage/>} />
+					<Route path="/ai-analysis" element= {<AnalysisPage />} />
 
 					{/* -------- Product Finder Page --------- */}
-					<Route path="/product-finder" element= {<ProductFinderPage/>} />
+					<Route path="/product-finder" element= {<ProductFinderPage />} />
 
 					{/* -------------- Shop Page -------------*/}
 					<Route path="/shop" element= {<ShopPage/>} />
@@ -42,13 +42,13 @@ function App() {
 					<Route path="/shop/:homeCategoryClicked" element={<ShopPage />} />
 					
 					{/* -------------- Blog Page -------------*/}
-					<Route path="/blog" element= {<BlogPage/>} />
+					<Route path="/blog" element= {<BlogPage />} />
 
 					{/* -------------- Checkout Page -------------*/}
-					<Route path="/checkout" element= {<CheckoutPage/>} />
+					<Route path="/checkout" element= {<CheckoutPage />} />
 					
 					{/* -------------- User Profile Page -------------*/}
-					<Route path="/user-profile" element= {<UserProfilePage/>} />	
+					<Route path="/user-profile" element= {<UserProfilePage />} />	
 				</Routes>
 			</main>	
 

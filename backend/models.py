@@ -1,7 +1,9 @@
-from app import db
-from datetime import datetime
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime, timezone
 from werkzeug.security import generate_password_hash, check_password_hash
 
+
+db = SQLAlchemy()
 
 # User 1 — * Order 1 — * OrderItem * — 1 Product
 # A User places an Order → Each Order contains multiple OrderItems → Each OrderItem references one Product.
@@ -29,7 +31,7 @@ class User(db.Model):
     name = db.Column(db.String(120))
     email = db.Column(db.String(120), unique=True, nullable=False)
     password_hash = db.Column(db.String(255), nullable=False)
-    created_at = db.Column(db.DateTime, default=datetime.now(datetime.UTC))
+    created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
 
     # Relationship: one user can have many orders (1-*)
     orders = db.relationship("Order", back_populates="user") #reverse relationship name on Order 
@@ -49,7 +51,7 @@ class Order(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     total = db.Column(db.Integer)
-    created_at = db.Column(db.DateTime, default=datetime.now(datetime.UTC))
+    created_at = db.Column(db.DateTime, default=lambda: datetime.now(timezone.utc))
     status = db.Column(db.String(20), default="Pending")
     payment_method = db.Column(db.String(50))
     payment_status = db.Column(db.String(20), default="Unpaid")
