@@ -429,15 +429,6 @@ section {
   background-color: #7d3396;
 }
 
-.recommendations{
-  color:#545454;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 400;
-  font-size: 2rem;
-  padding: 1rem;
-  margin: auto;
-}
-
 .answer-list{
   color:#545454;
   font-family: "Montserrat", sans-serif;
@@ -446,3 +437,143 @@ section {
   padding: 1rem;
   margin: auto;
 }
+
+.recommendations{
+  margin: 1rem;
+  border-color: rgb(225, 225, 225);
+}
+
+.recommendations-text{
+  width: 95%;
+  color:#545454;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: auto;
+}
+
+.recommendations .col{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.recommendations .card-img{
+  height: auto;
+  width: 10rem;
+}
+
+.recommendations .card-text{
+  font-size: 1rem;
+}
+
+.recommended-products{
+  width: 95%;
+  margin: auto;
+}
+
+.top-heading-button{
+  display: flex;
+  width: 95%;
+  background-color: #b374c8;
+  border: #b374c8;
+  margin: auto;
+  margin-top: auto;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.top-heading-button:hover{
+  background-color: #b374c8;
+  border: #b374c8;
+}
+
+.heading-button{
+  display: flex;
+  width: 95%;
+  background-color: #b374c8;
+  border: #b374c8;
+  margin: auto;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.heading-button:hover{
+  background-color: #b374c8;
+  border: #b374c8;
+}
+
+.recommend-button{
+  font-size: 1.25rem;
+  color:white;
+  background-color: #d0a5dd;
+  border: #d0a5dd;
+  font-weight: 600;
+  margin: 1.25rem;
+  padding: 0.75rem;
+}
+
+.recommend-button:hover{
+  background-color: #7d3396;
+}
+
+.day-routine{
+  height: 26rem;
+  width: 15rem;
+  margin: auto;
+  padding: 1rem;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.day-routine .card-subtitle{
+  color: #7d3396;
+}
+
+.day-routine .card-text{
+  text-align: justify;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.day-routine .card-img{
+  height: auto;
+  width: 10rem;
+}
+
+.night-routine{
+  height: 26rem;
+  width: 22rem;
+  margin: auto;
+  padding: 1rem;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.night-routine .card-text{
+  text-align: justify;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.night-routine .card-subtitle{
+  color: #7d3396;
+}
+
+.night-routine .card-img{
+  height: auto;
+  width: 10rem;
+}
+

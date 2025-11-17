@@ -2,8 +2,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css"
 
 import {useState, useEffect} from "react";
-import {navigate, useNavigate} from "react-router-dom";
-import {Container, Button} from "react-bootstrap";
+import {useNavigate} from "react-router-dom";
+import {useCart} from "../context/CartContext";
+import {Container, Card, Button, Spinner, Col, Row} from "react-bootstrap";
 
 
 export default function ProductFinderPage(){
@@ -11,7 +12,10 @@ export default function ProductFinderPage(){
     const [step, setStep] = useState(0);
     const [answers, setAnswers] = useState({});
     const [isComplete, setIsComplete] = useState(false);
+    const [personalisedProducts, setPersonalisedProducts] = useState([]);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
+    const {addToCart} = useCart();
 
     const questions = [
         { key: "gender", question: "What is your gender?", options: ["Male", "Female", "Prefer not to answer"] },
@@ -20,9 +24,9 @@ export default function ProductFinderPage(){
         { key: "skinType", question: "What is your skin type?", options: ["Oily", "Dry", "Combination", "Normal", "Sensitive"] },
         { key: "sunExposure", question: "How often are you exposed to sunlight?", options: ["Rarely", "Occasionally", "Daily for 1-2 hours", "Daily for 3+ hours"] },
         { key: "makeup", question: "Do you wear makeup regularly?", options: ["Yes, daily", "Occasionally", "No"] }
-    ]
+    ];
 
-    const current = questions[step]
+    const current = questions[step];
     
     const handleAnswers = (value) => {
         const key = current.key;
@@ -34,16 +38,140 @@ export default function ProductFinderPage(){
         } else{
             setIsComplete(true);
         }
+    };
+
+    useEffect(() => { 
+        if(isComplete) fetchPersonalisedProducts();
+    }, [isComplete]);
+
+    const fetchPersonalisedProducts = () => {
+        const data = {
+            "recommendations": [
+                {
+                "id": 3,
+                "name": "Vitamin C Brightening Cleanser",
+                "category": "Cleanser",
+                "skinConcern": "Dark Spots",
+                "image": "/images/darkspots-cleanser.png",
+                "reason": "Brightens the skin and helps fade pigmentation — ideal for dark spots."
+                },
+                {
+                "id": 8,
+                "name": "Vitamin C 15% Brightening Serum",
+                "category": "Serum",
+                "skinConcern": "Dark Spots",
+                "image": "/images/darkspots-serum.png",
+                "reason": "Targets pigmentation, boosts radiance, and supports collagen production."
+                },
+                {
+                "id": 13,
+                "name": "Vitamin C & Hyaluronic Acid Moisturiser",
+                "category": "Moisturiser",
+                "skinConcern": "Dark Spots",
+                "image": "/images/darkspots-moisturiser.png",
+                "reason": "Deeply hydrates while brightening dull skin and improving tone."
+                },
+                {
+                "id": 18,
+                "name": "Niacinamide + Vitamin C Brightening Sunscreen",
+                "category": "Sunscreen",
+                "skinConcern": "Dark Spots",
+                "image": "/images/darkspots-sunscreen.png",
+                "reason": "Prevents further pigmentation and protects against UV-induced darkening."
+                }
+            ],
+
+            "dayRoutine": [
+                {
+                "stepNumber": "1",
+                "id": 3,
+                "name": "Vitamin C Brightening Cleanser",
+                "category": "Cleanser",
+                "image": "/images/darkspots-cleanser.png",
+                "howToApply": "Apply on damp skin, massage for 20–30 seconds, then rinse."
+                },
+                {
+                "stepNumber": "2",
+                "id": 8,
+                "name": "Vitamin C 15% Brightening Serum",
+                "category": "Serum",
+                "image": "/images/darkspots-serum.png",
+                "howToApply": "Apply 2–3 drops to fully dry skin. Let it absorb for 1 minute."
+                },
+                {
+                "stepNumber": "3",
+                "id": 13,
+                "name": "Vitamin C & Hyaluronic Acid Moisturiser",
+                "category": "Moisturiser",
+                "image": "/images/darkspots-moisturiser.png",
+                "howToApply": "Apply a pea-sized amount evenly across your face and neck."
+                },
+                {
+                "stepNumber": "4",
+                "id": 18,
+                "name": "Niacinamide + Vitamin C Brightening Sunscreen",
+                "category": "Sunscreen",
+                "image": "/images/darkspots-sunscreen.png",
+                "howToApply": "Use 2 fingers’ worth and reapply every 2–3 hours if outdoors."
+                }
+            ],
+
+            "nightRoutine": [
+                {
+                "stepNumber": "1",
+                "id": 3,
+                "name": "Vitamin C Brightening Cleanser",
+                "category": "Cleanser",
+                "image": "/images/darkspots-cleanser.png",
+                "howToApply": "Gently cleanse your skin for 20–30 seconds to remove impurities."
+                },
+                {
+                "stepNumber": "2",
+                "id": 8,
+                "name": "Vitamin C 15% Brightening Serum",
+                "category": "Serum",
+                "image": "/images/darkspots-serum.png",
+                "howToApply": "Apply 2–3 drops and pat lightly until absorbed."
+                },
+                {
+                "stepNumber": "3",
+                "id": 13,
+                "name": "Vitamin C & Hyaluronic Acid Moisturiser",
+                "category": "Moisturiser",
+                "image": "/images/darkspots-moisturiser.png",
+                "howToApply": "Massage gently into the skin as the final step of your night routine."
+                }
+            ]
+        };
+        setPersonalisedProducts(data);
+
     }
+
+    // const fetchPersonalisedProducts = async () => {
+    //     setLoading(true);
+    //     try{
+    //         const res = await fetch("http://127.0.0.1:5000/api/personalised-products/",{
+    //             method: "POST",
+    //             headers: { "Content-Type": "application/json"},
+    //             body: JSON.stringify({answers})
+    //         });
+    //         console.log("res", res)
+    //         const data = await res.json();
+    //         console.log("data", data)
+    //         setPersonalisedProducts(data);
+    //     } catch(err){
+    //         console.error("Error fetching personalised products", err);
+    //     } finally{
+    //         setLoading(false);
+    //     }  
+    // };
+    
 
     
     return(
         <main>
-
-            {/* ----------- Product Finder Section -----------*/}  
-
-            <Container>
-                { !isComplete ? (
+            <Container className = "recommendations-text">
+                {!isComplete ? (
                     <>
                         <h2 className = "questions">
                             {current.question}
@@ -62,11 +190,106 @@ export default function ProductFinderPage(){
                     </>
                 ) : (
                     <>
-                        <h2 className = "recommendations">Personalised product recommendations for you</h2>
-                        <p className = "recommendations">(We will use the list below as prompt for out ChatGPT API)</p>
-                        {Object.entries(answers).map(([key,value]) => (
-                            <ul key={key} className = "answer-list">{key}: {value}</ul>
-                        ))}
+                        
+                        {loading ? (
+                            <>
+                                <Spinner/>
+                                <h3>
+                                    Sit back & relax while our AI tool fetches the perfect products for you and a bonus skincare routine
+                                </h3>
+                            </>
+                        ) : (
+                            <>
+                                <Button className = "top-heading-button">AI-generated Personalised Product Recommendations</Button>
+                                {personalisedProducts.recommendations?.length > 0 ? (
+                                    <>
+                                        {personalisedProducts.recommendations.map((product) => (
+                                            <div key={product.id} className = "recommendations">
+                                                <Card  className = "recommended-products">
+                                                    <Card.Body>
+                                                        <Row>
+                                                            <Col>
+                                                                <Card.Title>{product.category}</Card.Title>
+                                                            </Col>
+                                                            <Col>
+                                                                <Card.Img src={product.image} alt={product.name} className = "recommendations-img" />
+                                                            </Col>
+                                                            <Col>
+                                                                <Card.Subtitle>{product.name}</Card.Subtitle>
+                                                            </Col>
+                                                            <Col>
+                                                                <Card.Text>{product.reason}</Card.Text>
+                                                            </Col>
+                                                            <Col>
+                                                                <Button
+                                                                    className = "recommend-button"
+                                                                    onClick = {() => addToCart({...product, category: product.category})}
+                                                                >
+                                                                    Add To Cart
+                                                                </Button>
+                                                            </Col>
+                                                        </Row>
+                                                    </Card.Body>
+                                                </Card>
+                                            </div>
+                                        ))}
+                                        <Button className = "heading-button">Day Routine</Button>
+                                        <Row className = "recommendations">
+                                            {personalisedProducts.dayRoutine.map((step, index) => (
+                                                <Col key={step.id}>
+                                                    <Card className = "day-routine">
+                                                        <Row>
+                                                            <Card.Subtitle className = "pt-2"><u>Step {step.stepNumber}</u></Card.Subtitle>
+                                                        </Row>
+                                                        <Row>
+                                                            <Card.Title>{step.category}</Card.Title>
+                                                        </Row>
+                                                        <Row>
+                                                            <Card.Img src = {`/images/product${index+1}.png`} alt={step.name}/>
+                                                        </Row>
+                                                        <Row>
+                                                            <Card.Subtitle>{step.name}</Card.Subtitle>
+                                                        </Row>
+                                                        <Row>
+                                                            <Card.Text>{step.howToApply}</Card.Text>
+                                                        </Row>
+                                                    </Card>
+                                                </Col>
+                                            ))}
+                                        </Row>
+                                        <Button className = "heading-button">Night Routine</Button>
+                                        <Row className = "recommendations">
+                                            {personalisedProducts.nightRoutine.map((step,index) => (
+                                                <Col key = {step.id}>
+                                                        <Card className = "night-routine">
+                                                            
+                                                                <Row>
+                                                                    <Card.Subtitle className = "pt-2"><u>Step {step.stepNumber}</u></Card.Subtitle>
+                                                                </Row>
+                                                                <Row>
+                                                                    <Card.Title>{step.category}</Card.Title>
+                                                                </Row>
+                                                                <Row>
+                                                                    <Card.Img src = {`/images/product${index+1}.png`} alt={step.name}/>
+                                                                </Row>
+                                                                <Row>
+                                                                    <Card.Subtitle>{step.name}</Card.Subtitle>
+                                                                </Row>
+                                                                <Row>
+                                                                    <Card.Text>{step.howToApply}</Card.Text>
+                                                                </Row>
+                                                            
+                                                        </Card>
+                                                </Col> 
+                                            ))}
+                                        </Row>
+                                    </>
+                                )
+                                : (
+                                    <p>No personalised product recommendations fetched!</p>
+                                )}
+                            </>
+                        )} 
                     </>
                 )}
                 

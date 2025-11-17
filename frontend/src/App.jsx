@@ -29,14 +29,14 @@ function App() {
 					{/* ------------ Home Page -------------- */}
 					<Route path="/" element={<HomePage />}/>
 
-					{/* ----------- Analysis Page ------------*/}
-					<Route path="/ai-analysis" element= {<AnalysisPage />} />
-
 					{/* -------- Product Finder Page --------- */}
 					<Route path="/product-finder" element= {<ProductFinderPage />} />
 
 					{/* -------------- Shop Page -------------*/}
-					<Route path="/shop" element= {<ShopPage/>} />
+					<Route path="/shop" element= {<ShopPage />} />
+
+					{/* ----------- Analysis Page ------------*/}
+					<Route path="/ai-analysis" element= {<AnalysisPage />} />
 
 					{/*--- Shop Page on clicking Shop now button ---*/} 
 					<Route path="/shop/:homeCategoryClicked" element={<ShopPage />} />

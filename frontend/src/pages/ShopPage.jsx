@@ -31,7 +31,7 @@ export default function ShopPage(){
                 const data = await res.json();
                 setProducts(data);
             } catch (err){
-                console.error("error fetching products", err);
+                console.error("Error fetching products", err);
             }
         };
         fetchProducts();
