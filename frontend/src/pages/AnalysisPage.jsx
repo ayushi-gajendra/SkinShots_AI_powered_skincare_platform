@@ -9,23 +9,32 @@ export default function AnalysisPage(){
 
     const fileInputRef = useRef(null);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [prediction, setPrediction] = useState("");
 
     const handleButtonClick = () =>{
         fileInputRef.current.click();
     };
 
-    const handleFileChange = (event) => {
+    const handleFileChange = async(event) => {
         const file = event.target.files[0];
         if (file){
             const imageUrl = URL.createObjectURL(file);
             setSelectedImage(imageUrl);
         }
+
+        const res = await fetch("http://127.0.0.1:5000/api/ai-analysis/", {
+            method: "POST",
+            body: (selectedImage)
+        });
+
+        const data = await res.json();
+        setPrediction(data.prediction);
+
     };
 
     return(
         <>
         <main>
-        {/* ------ Analysis Section ------- */}
             <Container>
                 <Row>
                     <Col>

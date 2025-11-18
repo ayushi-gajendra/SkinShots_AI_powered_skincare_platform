@@ -57,12 +57,10 @@ export default function ProductFinderPage(){
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify({answers})
             });
-            console.log("res", res)
             const data = await res.json();
-            console.log("data", data)
             setPersonalisedProducts(data);
-        } catch(err){
-            console.error("Error fetching personalised products", err);
+        } catch(error){
+            console.error("Error fetching personalised products", error);
         } finally{
             setLoading(false);
         }  
@@ -140,7 +138,7 @@ export default function ProductFinderPage(){
                                         <Row className = "recommendations">
                                             {personalisedProducts.dayRoutine.map((step, index) => (
                                                 <Col key={step.id}>
-                                                    <Card className = "day-routine">
+                                                    <Card className = "routine">
                                                         <Row>
                                                             <Card.Subtitle className = "pt-2"><u>Step {step.stepNumber}</u></Card.Subtitle>
                                                         </Row>
@@ -164,7 +162,7 @@ export default function ProductFinderPage(){
                                         <Row className = "recommendations">
                                             {personalisedProducts.nightRoutine.map((step,index) => (
                                                 <Col key = {step.id}>
-                                                        <Card className = "night-routine">
+                                                        <Card className = "routine">
                                                             
                                                                 <Row>
                                                                     <Card.Subtitle className = "pt-2"><u>Step {step.stepNumber}</u></Card.Subtitle>

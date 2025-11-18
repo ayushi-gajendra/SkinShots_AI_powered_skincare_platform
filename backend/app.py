@@ -24,13 +24,7 @@ def create_app():
     @app.route("/")
     def home():
         return("<h1>Backend Home Page</h1>")
-
-    @app.route("/api/data")
-    def api_data():
-        data = {
-            "message": "Practicing linking Frontend to Backend"
-        }
-        return jsonify(data)
+    
     
     return app
 

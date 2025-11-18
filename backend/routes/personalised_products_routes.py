@@ -9,7 +9,6 @@ personalised_products_bp = Blueprint("personalised_products", __name__, url_pref
 
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
-
 @personalised_products_bp.route("", methods=["POST"])
 @personalised_products_bp.route("/", methods=["POST"])
 def personalised_products():
@@ -98,8 +97,6 @@ def personalised_products():
         }
     )
     result_text = response.text
-    
-    print("🔵 RAW GEMINI RESPONSE:", repr(result_text))
 
     data_json = json.loads(result_text)
 

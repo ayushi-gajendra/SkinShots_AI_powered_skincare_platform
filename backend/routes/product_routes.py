@@ -1,8 +1,10 @@
 from flask import Blueprint, jsonify
 from models import Product
 
+
 # A blueprint (like a mini Flask app for this module)
 products_bp = Blueprint("products", __name__, url_prefix="/api/products")
+
 
 @products_bp.route("/", methods=["GET"])
 def get_products():

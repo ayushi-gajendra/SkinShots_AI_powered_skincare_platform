@@ -213,7 +213,7 @@ section {
   justify-content: center;
   align-items: center;
   font-family: "Montserrat", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: #545454;
   margin-left: 5rem;
@@ -223,9 +223,11 @@ section {
   background-color: #d0a5dd;
   color: white;
   border: none;
-  padding: 1rem;
-  font-size: 1.25rem;
+  padding: 1.5rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  margin-top: 3rem;
+  width: 100%;
 }
 
 .analysis-page-text button:hover {
@@ -241,7 +243,6 @@ section {
 .shop-page-cards{
   height:100%;
   text-align: center;
-  margin-bottom: 1.5rem;
   font-family: "Montserrat", sans-serif;
   margin-top: 1rem;
   margin-bottom: auto;
@@ -455,6 +456,7 @@ section {
 
 .recommendations .col{
   display: flex;
+  flex: 1;
   align-items: center;
   justify-content: center;
 }
@@ -525,54 +527,30 @@ section {
   background-color: #7d3396;
 }
 
-.day-routine{
-  height: 32rem;
-  width: 17rem;
-  margin: auto;
+.routine{
+  height:100%;
+  text-align: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   padding: 1rem;
   gap: 1.5rem;
   align-items: center;
-  justify-content: center;
-  text-align: center;
 }
 
-.day-routine .card-subtitle{
+.routine .card-subtitle{
   color: #7d3396;
 }
 
-.day-routine .card-text{
+.routine .card-text{
   text-align: justify;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-.day-routine .card-img{
-  height: auto;
-  width: 10rem;
-}
-
-.night-routine{
-  height: 26rem;
-  width: 22rem;
-  margin: auto;
-  padding: 1rem;
-  gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.night-routine .card-text{
-  text-align: justify;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.night-routine .card-subtitle{
-  color: #7d3396;
-}
-
-.night-routine .card-img{
+.routine .card-img{
   height: auto;
   width: 10rem;
 }
