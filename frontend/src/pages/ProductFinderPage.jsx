@@ -17,6 +17,7 @@ export default function ProductFinderPage(){
     const navigate = useNavigate();
     const {addToCart} = useCart();
 
+
     const questions = [
         { key: "gender", question: "What is your gender?", options: ["Male", "Female", "Prefer not to answer"] },
         { key: "age", question: "What is your age?", options: ["Below 20", "20-30", "31-40", "Above 40"] },
@@ -26,8 +27,10 @@ export default function ProductFinderPage(){
         { key: "makeup", question: "Do you wear makeup regularly?", options: ["Yes, daily", "Occasionally", "No"] }
     ];
 
+
     const current = questions[step];
     
+
     const handleAnswers = (value) => {
         const key = current.key;
         const finalAnswers = { ...answers, [key] : value };
@@ -40,133 +43,31 @@ export default function ProductFinderPage(){
         }
     };
 
+
     useEffect(() => { 
         if(isComplete) fetchPersonalisedProducts();
     }, [isComplete]);
 
-    const fetchPersonalisedProducts = () => {
-        const data = {
-            "recommendations": [
-                {
-                "id": 3,
-                "name": "Vitamin C Brightening Cleanser",
-                "category": "Cleanser",
-                "skinConcern": "Dark Spots",
-                "image": "/images/darkspots-cleanser.png",
-                "reason": "Brightens the skin and helps fade pigmentation — ideal for dark spots."
-                },
-                {
-                "id": 8,
-                "name": "Vitamin C 15% Brightening Serum",
-                "category": "Serum",
-                "skinConcern": "Dark Spots",
-                "image": "/images/darkspots-serum.png",
-                "reason": "Targets pigmentation, boosts radiance, and supports collagen production."
-                },
-                {
-                "id": 13,
-                "name": "Vitamin C & Hyaluronic Acid Moisturiser",
-                "category": "Moisturiser",
-                "skinConcern": "Dark Spots",
-                "image": "/images/darkspots-moisturiser.png",
-                "reason": "Deeply hydrates while brightening dull skin and improving tone."
-                },
-                {
-                "id": 18,
-                "name": "Niacinamide + Vitamin C Brightening Sunscreen",
-                "category": "Sunscreen",
-                "skinConcern": "Dark Spots",
-                "image": "/images/darkspots-sunscreen.png",
-                "reason": "Prevents further pigmentation and protects against UV-induced darkening."
-                }
-            ],
 
-            "dayRoutine": [
-                {
-                "stepNumber": "1",
-                "id": 3,
-                "name": "Vitamin C Brightening Cleanser",
-                "category": "Cleanser",
-                "image": "/images/darkspots-cleanser.png",
-                "howToApply": "Apply on damp skin, massage for 20–30 seconds, then rinse."
-                },
-                {
-                "stepNumber": "2",
-                "id": 8,
-                "name": "Vitamin C 15% Brightening Serum",
-                "category": "Serum",
-                "image": "/images/darkspots-serum.png",
-                "howToApply": "Apply 2–3 drops to fully dry skin. Let it absorb for 1 minute."
-                },
-                {
-                "stepNumber": "3",
-                "id": 13,
-                "name": "Vitamin C & Hyaluronic Acid Moisturiser",
-                "category": "Moisturiser",
-                "image": "/images/darkspots-moisturiser.png",
-                "howToApply": "Apply a pea-sized amount evenly across your face and neck."
-                },
-                {
-                "stepNumber": "4",
-                "id": 18,
-                "name": "Niacinamide + Vitamin C Brightening Sunscreen",
-                "category": "Sunscreen",
-                "image": "/images/darkspots-sunscreen.png",
-                "howToApply": "Use 2 fingers’ worth and reapply every 2–3 hours if outdoors."
-                }
-            ],
-
-            "nightRoutine": [
-                {
-                "stepNumber": "1",
-                "id": 3,
-                "name": "Vitamin C Brightening Cleanser",
-                "category": "Cleanser",
-                "image": "/images/darkspots-cleanser.png",
-                "howToApply": "Gently cleanse your skin for 20–30 seconds to remove impurities."
-                },
-                {
-                "stepNumber": "2",
-                "id": 8,
-                "name": "Vitamin C 15% Brightening Serum",
-                "category": "Serum",
-                "image": "/images/darkspots-serum.png",
-                "howToApply": "Apply 2–3 drops and pat lightly until absorbed."
-                },
-                {
-                "stepNumber": "3",
-                "id": 13,
-                "name": "Vitamin C & Hyaluronic Acid Moisturiser",
-                "category": "Moisturiser",
-                "image": "/images/darkspots-moisturiser.png",
-                "howToApply": "Massage gently into the skin as the final step of your night routine."
-                }
-            ]
-        };
-        setPersonalisedProducts(data);
-
-    }
-
-    // const fetchPersonalisedProducts = async () => {
-    //     setLoading(true);
-    //     try{
-    //         const res = await fetch("http://127.0.0.1:5000/api/personalised-products/",{
-    //             method: "POST",
-    //             headers: { "Content-Type": "application/json"},
-    //             body: JSON.stringify({answers})
-    //         });
-    //         console.log("res", res)
-    //         const data = await res.json();
-    //         console.log("data", data)
-    //         setPersonalisedProducts(data);
-    //     } catch(err){
-    //         console.error("Error fetching personalised products", err);
-    //     } finally{
-    //         setLoading(false);
-    //     }  
-    // };
+    const fetchPersonalisedProducts = async () => {
+        setLoading(true);
+        try{
+            const res = await fetch("http://127.0.0.1:5000/api/personalised-products/",{
+                method: "POST",
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify({answers})
+            });
+            console.log("res", res)
+            const data = await res.json();
+            console.log("data", data)
+            setPersonalisedProducts(data);
+        } catch(err){
+            console.error("Error fetching personalised products", err);
+        } finally{
+            setLoading(false);
+        }  
+    };
     
-
     
     return(
         <main>
@@ -195,12 +96,14 @@ export default function ProductFinderPage(){
                             <>
                                 <Spinner/>
                                 <h3>
-                                    Sit back & relax while our AI tool fetches the perfect products for you and a bonus skincare routine
+                                    Sit back & relax.. <br /> 
+                                    while our AI tool fetches the perfect products for you <br />
+                                    and a bonus skincare routine !
                                 </h3>
                             </>
                         ) : (
                             <>
-                                <Button className = "top-heading-button">AI-generated Personalised Product Recommendations</Button>
+                                <Button className = "top-heading-button">AI - Generated Personalised Product Recommendations</Button>
                                 {personalisedProducts.recommendations?.length > 0 ? (
                                     <>
                                         {personalisedProducts.recommendations.map((product) => (
