@@ -25,17 +25,18 @@ export default function ShopPage(){
     
     // To set the products
     useEffect(() => {
-        const fetchProducts = async() => {
+        fetchProducts();
+    }, []);
+
+    const fetchProducts = async() => {
             try{
                 const res = await fetch("http://127.0.0.1:5000/api/products/");
                 const data = await res.json();
                 setProducts(data);
-            } catch (err){
-                console.error("Error fetching products", err);
+            } catch (error){
+                console.error("Error fetching products", error);
             }
         };
-        fetchProducts();
-    }, []);
 
     const categories = [...new Set(products.map(p => p.category))]
     const filteredProducts = products.filter(p => p.category === activeCategory)
@@ -51,46 +52,44 @@ export default function ShopPage(){
         <>
         <main>
 
-            {/* -------- Shop Navbar --------- */}
-
-                <Container>
-                    <Navbar className = "shop-page-navbar">
-                        {categories.map(category =>(
-                            <Button
-                                key = {category}
-                                className="shop-page-navbar-buttons px-5"
-                                active = {activeCategory === category}
-                                onClick = {()=> handleCategoryClick(category)}
-                            >
-                                {category}
-                            </Button>
+            <Container>
+                <Navbar className = "shop-page-navbar">
+                    {categories.map(category =>(
+                        <Button
+                            key = {category}
+                            className="shop-page-navbar-buttons px-5"
+                            active = {activeCategory === category}
+                            onClick = {()=> handleCategoryClick(category)}
+                        >
+                            {category}
+                        </Button>
+                    ))}
+                </Navbar>
+                <div>
+                    <Row className="cards-row">
+                        {filteredProducts.map(product =>(
+                            <Col key = {product.id}>
+                                <Card className="shop-page-cards">
+                                    <Card.Body>
+                                        <Card.Title>{product.skin_concern}</Card.Title>
+                                        <Card.Img src={product.image} alt={product.name} />
+                                        <Card.Subtitle>{product.name}</Card.Subtitle>
+                                        <Card.Text>{product.description}</Card.Text>
+                                        <Card.Title>₹{product.price}</Card.Title>
+                                        <Button 
+                                            className="shop-page-buttons" 
+                                            size="lg"
+                                            onClick = {() => addToCart({...product, category: activeCategory})}
+                                        >
+                                            Add to Cart
+                                        </Button>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
                         ))}
-                    </Navbar>
-                    <div>
-                        <Row className="cards-row">
-                            {filteredProducts.map(product =>(
-                                <Col key = {product.id}>
-                                    <Card className="shop-page-cards">
-                                        <Card.Body>
-                                            <Card.Title>{product.skin_concern}</Card.Title>
-                                            <Card.Img src={product.image} alt={product.name} />
-                                            <Card.Subtitle>{product.name}</Card.Subtitle>
-                                            <Card.Text>{product.description}</Card.Text>
-                                            <Card.Title>₹{product.price}</Card.Title>
-                                            <Button 
-                                                className="shop-page-buttons" 
-                                                size="lg"
-                                                onClick = {() => addToCart({...product, category: activeCategory})}
-                                            >
-                                                Add to Cart
-                                            </Button>
-                                        </Card.Body>
-                                    </Card>
-                                </Col>
-                            ))}
-                        </Row>
-                    </div>
-                </Container>
+                    </Row>
+                </div>
+            </Container>
         </main>
         </>
     )

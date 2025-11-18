@@ -1,14 +1,17 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "../App.css"
 
-import React, {useRef, useState} from "react"
-import {Row, Col, Image, Button, Container} from "react-bootstrap"
+import {useRef, useState, useEffect} from "react";
+import {useNavigate} from "react-router-dom";
+import {Row, Col, Image, Button, Container} from "react-bootstrap";
 
 
 export default function AnalysisPage(){
 
     const fileInputRef = useRef(null);
     const [selectedImage, setSelectedImage] = useState(null);
+    const [prediction, setPrediction] = useState(null);
+    const navigate = useNavigate();
 
     const handleButtonClick = () =>{
         fileInputRef.current.click();
@@ -22,10 +25,29 @@ export default function AnalysisPage(){
         }
     };
 
+    useEffect(() => {
+        if (selectedImage){
+            fetchSkinConcern();
+        }
+    }, [selectedImage]);
+
+    const fetchSkinConcern = async() => {
+        try{
+            const res = await fetch("http://127.0.0.1:5000/api/skin-analysis/");
+            const data = await res.json();
+            setPrediction(data.skin_concern);
+            navigate(`/ai-analysis/result`);
+
+        } catch(error){
+            console.error("Error:", error);
+        }      
+    };
+
+    
+
     return(
         <>
         <main>
-        {/* ------ Analysis Section ------- */}
             <Container>
                 <Row>
                     <Col>
@@ -65,6 +87,10 @@ export default function AnalysisPage(){
                                     alt="Preview"
                                     className="preview-image"
                                 />
+                            )}
+
+                            {prediction && (
+                                <p>{prediction}</p>
                             )}
                         </div>
                     </Col>

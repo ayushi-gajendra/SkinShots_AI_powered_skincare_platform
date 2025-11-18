@@ -1,11 +1,11 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
-from openai import OpenAI
 from dotenv import load_dotenv
 from models import db
 from routes.product_routes import products_bp
 from routes.personalised_products_routes import personalised_products_bp
+from routes.skin_analysis_routes import skin_analysis_bp
 
 
 load_dotenv()
@@ -20,6 +20,8 @@ def create_app():
     app.register_blueprint(products_bp)
     
     app.register_blueprint(personalised_products_bp)
+
+    app.register_blueprint(skin_analysis_bp)
 
     @app.route("/")
     def home():
