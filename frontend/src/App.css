@@ -527,9 +527,11 @@ section {
   background-color: #7d3396;
 }
 
-.day-routine{
-  height: 32rem;
-  width: 17rem;
+.routine{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100%;
   margin: auto;
   padding: 1rem;
   gap: 1.5rem;
@@ -538,44 +540,19 @@ section {
   text-align: center;
 }
 
-.day-routine .card-subtitle{
+.routine .card-subtitle{
   color: #7d3396;
 }
 
-.day-routine .card-text{
+.routine .card-text{
   text-align: justify;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
 
-.day-routine .card-img{
+.routine .card-img{
   height: auto;
   width: 10rem;
 }
 
-.night-routine{
-  height: 26rem;
-  width: 22rem;
-  margin: auto;
-  padding: 1rem;
-  gap: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
-.night-routine .card-text{
-  text-align: justify;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-}
-
-.night-routine .card-subtitle{
-  color: #7d3396;
-}
-
-.night-routine .card-img{
-  height: auto;
-  width: 10rem;
-}
 

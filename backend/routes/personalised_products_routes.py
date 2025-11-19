@@ -56,8 +56,9 @@ def personalised_products():
         "name": "Salicylic Acid 2% Gel Cleanser",
         "category": "Cleanser",
         "skinConcern": "Acne",
-        "image": (from the products_list)
-        "reason": "Ideal for acne-prone skin"
+        "price": (from the products_list),
+        "image": (from the products_list),
+        "reason": (Use second-person language. Understand how this will be useful based on the answers given)
         }}
     ],
     "dayRoutine": [
@@ -98,8 +99,6 @@ def personalised_products():
         }
     )
     result_text = response.text
-    
-    print("🔵 RAW GEMINI RESPONSE:", repr(result_text))
 
     data_json = json.loads(result_text)
 

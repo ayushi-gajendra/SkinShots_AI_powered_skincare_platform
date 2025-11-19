@@ -140,7 +140,7 @@ export default function ProductFinderPage(){
                                         <Row className = "recommendations">
                                             {personalisedProducts.dayRoutine.map((step, index) => (
                                                 <Col key={step.id}>
-                                                    <Card className = "day-routine">
+                                                    <Card className = "routine">
                                                         <Row>
                                                             <Card.Subtitle className = "pt-2"><u>Step {step.stepNumber}</u></Card.Subtitle>
                                                         </Row>
@@ -164,7 +164,7 @@ export default function ProductFinderPage(){
                                         <Row className = "recommendations">
                                             {personalisedProducts.nightRoutine.map((step,index) => (
                                                 <Col key = {step.id}>
-                                                        <Card className = "night-routine">
+                                                        <Card className = "routine">
                                                             
                                                                 <Row>
                                                                     <Card.Subtitle className = "pt-2"><u>Step {step.stepNumber}</u></Card.Subtitle>
