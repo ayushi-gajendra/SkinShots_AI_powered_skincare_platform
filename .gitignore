@@ -1,5 +1,26 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# node_modules
+frontend/node_modules/
+
+# build files
+frontend/.cache/
+backend/__pycache__/
+
+# model files
+backend/models/*.keras
+backend/models/*.h5
+backend/models/*.tflite
+backend/models/saved_model/
+
+# large artefacts
+uploads/
+*.pack
+*.zip
+*.tar
+*.pickle
+*.pkl
+
 # dependencies
 /node_modules
 /.pnp
@@ -26,4 +47,4 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
-    
+    backend/models/*.keras
