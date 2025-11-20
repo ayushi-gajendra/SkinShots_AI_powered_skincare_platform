@@ -25,7 +25,6 @@ export default function UserProfilePage(){
     return(
         <>
         <main>
-            <h3 className="mx-5">{data.message}</h3>
             {/* ----------- User Section -----------*/}  
             <div className="user-details">
                 <h2>Personal Information</h2>
