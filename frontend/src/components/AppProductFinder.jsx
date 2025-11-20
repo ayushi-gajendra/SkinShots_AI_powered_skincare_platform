@@ -11,20 +11,18 @@ export default function AppProductFinder(){
             <section>
                 <Container>
                     <Row>
-                        <Col sm={6} className= "product-finder my-5">
+                        <Col sm={6} className= "product-finder">
                             <div className="image-overlay-container">
                                 <Image href="#product-finder" src="images/product-finder.png" rounded fluid/>
                                 <Button 
-                                    variant="outline-dark" 
-                                    className= "buttons" 
-                                    size="lg" 
+                                    className= "buttons"
                                     onClick = { () => navigate("/product-finder") }
                                 >
                                     Find My Product
                                 </Button>
                             </div>
                         </Col>
-                        <Col className= "my-5">
+                        <Col>
                             <Image src="images/product-finder-lady.jpg" rounded fluid/>
                         </Col>
                     </Row>

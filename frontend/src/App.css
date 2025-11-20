@@ -93,13 +93,14 @@ section {
   position:absolute;
   top: 95%;
   left:50%;
+  width: 70%;
   transform: translate(-50%, -50%);
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 600;
   background-color: #d0a5dd;
   color: white;
   border: none;
-  padding: 1rem;
+  padding: 0.75rem;
 }
 
 .buttons:hover{
