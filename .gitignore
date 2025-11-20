@@ -7,12 +7,6 @@ frontend/node_modules/
 frontend/.cache/
 backend/__pycache__/
 
-# model files
-backend/models/*.keras
-backend/models/*.h5
-backend/models/*.tflite
-backend/models/saved_model/
-
 # large artefacts
 uploads/
 *.pack
