@@ -65,7 +65,6 @@ function AppNavbar(){
 						<Nav.Link onClick = {()=> navigate("/shop")}>Shop</Nav.Link>
 						<Nav.Link onClick = {() => navigate("/product-finder")}>Product Finder</Nav.Link>
 						<Nav.Link onClick={() => navigate("/ai-analysis")}>AI Skin Analysis</Nav.Link>
-						<Nav.Link onClick={() => navigate("/blog")}>Blog</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

@@ -22,7 +22,7 @@ export default function AppShop(){
 						<Col key={product.id}>
 							<Card>
                                 <div>
-                                    <Card.Body className="shop-products text-center my-3">
+                                    <Card.Body className="shop-products text-center">
                                         <Card.Title>{product.name}</Card.Title>
                                         <Card.Img src={product.image}/>
                                         <Button 
