@@ -38,9 +38,6 @@ function App() {
 					{/* ----------- Analysis Page ------------*/}
 					<Route path="/ai-analysis" element= {<AnalysisPage />} />
 
-					{/* ----------- Analysis Page Result ------------*/}
-					<Route path="/ai-analysis/result" element= {<AnalysisPage />} />
-
 					{/*--- Shop Page on clicking Shop now button ---*/} 
 					<Route path="/shop/:homeCategoryClicked" element={<ShopPage />} />
 					

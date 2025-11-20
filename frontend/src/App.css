@@ -208,7 +208,7 @@ section {
   background-color: #b57bc0;
 }
 
-.analysis-page-text{
+.analysis-page{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -219,7 +219,7 @@ section {
   margin-left: 5rem;
 }
 
-.analysis-page-text button{
+.analysis-page button{
   background-color: #d0a5dd;
   color: white;
   border: none;
@@ -230,14 +230,43 @@ section {
   margin: auto;
 }
 
-.analysis-page-text button:hover {
+.analysis-page button:hover {
   background-color: #7d3396;
 }
 
-.preview-image{
-  height:auto;
-  width:80%;
+.analysis-result{
+  height: auto;
+  width: 100%;
+  align-items: center;
+  display:flex;
+  flex: 1;
+  color:#545454;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  padding: 1rem;
+  margin: auto;
+}
+
+.selected-image{
+  height: auto;
+  width: 70%;
   margin-top: 10%;
+}
+
+.analysis-result button{
+  background-color: #d0a5dd;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  width: 100%;
+  margin: auto;
+}
+
+.analysis-result button:hover{
+  background-color: #7d3396;
 }
 
 .shop-page-cards{

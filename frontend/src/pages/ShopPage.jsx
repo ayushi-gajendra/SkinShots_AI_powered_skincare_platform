@@ -79,7 +79,8 @@ export default function ShopPage(){
                                         <Button 
                                             className="shop-page-buttons" 
                                             size="lg"
-                                            onClick = {() => addToCart({...product, category: activeCategory})}
+                                            onClick = {() => addToCart(product)}
+                                            //onClick = {() => addToCart({...product, category: activeCategory})}
                                         >
                                             Add to Cart
                                         </Button>

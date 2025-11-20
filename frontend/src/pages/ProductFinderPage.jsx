@@ -57,9 +57,7 @@ export default function ProductFinderPage(){
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify({answers})
             });
-            console.log("res", res)
             const data = await res.json();
-            console.log("data", data)
             setPersonalisedProducts(data);
         } catch(err){
             console.error("Error fetching personalised products", err);
@@ -78,7 +76,6 @@ export default function ProductFinderPage(){
                             {current.question}
                         </h2>
                         {current.options.map((option,index) => (
-                            
                                 <Button
                                     className = "option-buttons" 
                                     key = {index}
@@ -86,7 +83,6 @@ export default function ProductFinderPage(){
                                 >
                                     {option}
                                 </Button>
-
                         ))}  
                     </>
                 ) : (
@@ -126,7 +122,7 @@ export default function ProductFinderPage(){
                                                             <Col>
                                                                 <Button
                                                                     className = "recommend-button"
-                                                                    onClick = {() => addToCart({...product, category: product.category})}
+                                                                    onClick = {() => addToCart(product)}
                                                                 >
                                                                     Add To Cart
                                                                 </Button>
@@ -165,7 +161,6 @@ export default function ProductFinderPage(){
                                             {personalisedProducts.nightRoutine.map((step,index) => (
                                                 <Col key = {step.id}>
                                                         <Card className = "routine">
-                                                            
                                                                 <Row>
                                                                     <Card.Subtitle className = "pt-2"><u>Step {step.stepNumber}</u></Card.Subtitle>
                                                                 </Row>
